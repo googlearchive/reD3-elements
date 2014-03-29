@@ -2,10 +2,10 @@
 <link rel="import" href="reD3-import.html">
 
 <!--
-Element base for the `reD3` (http://bugzu.github.io/reD3/#/) charts.
+Element base for the `reD3` (http://bugzu.github.io/reD3/) charts.
 
-@class reD3-line
-@blurb Element wrapper for the highlightjs library.
+@class reD3-base
+@blurb Element wrapper for the reD3 library.
 @status alpha
 @snap snap.png
 -->
@@ -40,8 +40,28 @@ Element base for the `reD3` (http://bugzu.github.io/reD3/#/) charts.
 
     Polymer('reD3-base', {
 
+      /**
+       * Chart width, in pixels.
+       *
+       * @attribute width
+       * @type Number
+       */
       width: 500,
+
+      /**
+       * Chart height, in pixels.
+       *
+       * @attribute height
+       * @type Number
+       */
       height: 400,
+
+      /**
+       * Data model rendered to the chart.
+       * @attribute data
+       * @type Array
+       */
+      data: [],
 
       ready: function() {
         this.widthChanged();
@@ -134,7 +154,7 @@ Element wrapper for the `reD3` (http://bugzu.github.io/reD3/) pie chart.
 Element wrapper for the `reD3` (http://bugzu.github.io/reD3/) bar chart.
 
 @class reD3-bar
-@blurb Element wrapper for the reD3 pie chart.
+@blurb Element wrapper for the reD3 bar chart.
 @status alpha
 @snap snap.png
 -->
@@ -161,9 +181,9 @@ Element wrapper for the `reD3` (http://bugzu.github.io/reD3/) bar chart.
 </polymer-element>
 
 <!--
-Element wrapper for the `reD3` (http://bugzu.github.io/reD3/) stacked-area chart.
+Element wrapper for the `reD3` (http://bugzu.github.io/reD3/) stackedarea chart.
 
-@class reD3-bar
+@class reD3-stackedarea
 @blurb Element wrapper for the reD3 stackedarea chart.
 @status alpha
 @snap snap.png

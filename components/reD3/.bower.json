@@ -1,0 +1,13 @@
+{
+  "name": "reD3",
+  "homepage": "https://github.com/bugzu/reD3",
+  "_release": "d4711f9119",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d4711f9119fad39498744884fb5da80dfd026923"
+  },
+  "_source": "git://github.com/bugzu/reD3.git",
+  "_target": "*",
+  "_originalSource": "bugzu/reD3"
+}

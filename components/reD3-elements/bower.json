@@ -1,0 +1,9 @@
+{
+  "name": "reD3-elements",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "d3": "*",
+    "reD3": "bugzu/reD3"
+  }
+}

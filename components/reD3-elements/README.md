@@ -1,7 +1,7 @@
-reD3-element
-============
+reD3-elements
+=============
 
-See the [component page](http://polymerlabs.github.io/reD3-element) for more information.
+See the [component page](http://polymerlabs.github.io/reD3-elements) for more information.
 
 reD3-import
 ===========

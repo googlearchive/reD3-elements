@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+
+  <title>reD3-elements Demo</title>
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="reD3-elements.html">
+
+</head>
+<body unresolved>
+
+  <reD3-line xValue="date" yValue="close" yAxisText="Price ($)"></reD3-line>
+
+  <reD3-pie text="age" color="age" value="population"></reD3-pie>
+
+  <reD3-bar xValue="letter" yValue="frequency" yAxisText="Frequency"></reD3-bar>
+
+  <reD3-stackedarea interpolation="linear"></reD3-stackedarea>
+
+  <script>
+    addEventListener('polymer-ready', function() {
+
+      var parseDate = d3.time.format("%d-%b-%y").parse;
+      d3.tsv("../reD3/dist/data/line.tsv", function(error, data) {
+        data.forEach(function(d) {
+          d.date = parseDate(d.date);
+          d.close = +d.close;
+        });
+        document.querySelector('reD3-line').data = data;
+      });
+
+      d3.csv("../reD3/dist/data/pieb.csv", function(error, data) {
+        data.forEach(function(d) {
+          d.population = +d.population;
+        });
+        document.querySelector('reD3-pie').data = data;
+      });
+
+      function type(d) {
+        d.frequency = +d.frequency;
+        return d;
+      }
+      d3.tsv("../reD3/dist/data/bar.tsv", type, function(error, data) {
+        document.querySelector('reD3-bar').data = data;
+      });
+
+      var format = d3.time.format("%m/%d/%y");;
+      d3.csv("../reD3/dist/data/sa.csv", function(data) {
+        data.forEach(function(d) {
+            d.date = format.parse(d.date);
+            d.value = +d.value;
+        });
+        document.querySelector('reD3-stackedarea').data = data;
+      });
+
+    });
+  </script>
+
+</body>
+</html>

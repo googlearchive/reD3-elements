@@ -1,0 +1,189 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="reD3-import.html">
+
+<!--
+Element base for the `reD3` (http://bugzu.github.io/reD3/#/) charts.
+
+@class reD3-line
+@blurb Element wrapper for the highlightjs library.
+@status alpha
+@snap snap.png
+-->
+<polymer-element name="reD3-base" attributes="width height data">
+
+  <template>
+
+    <link href="../reD3/dist/css/reD3.css" rel="stylesheet">
+
+    <style>
+
+      :host {
+        display: inline-block;
+        position: relative;
+      }
+
+      #chart {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+    </style>
+
+    <div id="chart"></div>
+
+  </template>
+
+  <script>
+
+    Polymer('reD3-base', {
+
+      width: 500,
+      height: 400,
+
+      ready: function() {
+        this.widthChanged();
+        this.heightChanged();
+      },
+
+      domReady: function() {
+        this.constructChart();
+      },
+
+      widthChanged: function() {
+        this.style.width = this.width + 'px';
+      },
+
+      heightChanged: function() {
+        this.style.height = this.height + 'px';
+      },
+
+      dataChanged: function() {
+        this.chart.render(this.data);
+      }
+
+    });
+
+  </script>
+
+</polymer-element>
+
+<!--
+Element wrapper for the `reD3` (http://bugzu.github.io/reD3/) line chart.
+
+@class reD3-line
+@blurb Element wrapper for the reD3 line chart.
+@status alpha
+@snap snap.png
+-->
+<polymer-element name="reD3-line" extends="reD3-base" attributes="xValue yValue yAxisText">
+
+  <script>
+
+    Polymer('reD3-line', {
+
+      constructChart: function() {
+        this.chart = new reD3.Line(this.$.chart, {
+          width: this.width,
+          height: this.height,
+          xValue: this.xValue,
+          yValue: this.yValue,
+          yAxisText: this.yAxisText
+        });
+      }
+
+    });
+
+  </script>
+
+</polymer-element>
+
+<!--
+Element wrapper for the `reD3` (http://bugzu.github.io/reD3/) pie chart.
+
+@class reD3-pie
+@blurb Element wrapper for the reD3 pie chart.
+@status alpha
+@snap snap.png
+-->
+<polymer-element name="reD3-pie" extends="reD3-base" attributes="text color value">
+
+  <script>
+
+    Polymer('reD3-pie', {
+
+      constructChart: function() {
+        this.chart = new reD3.Pie(this.$.chart, {
+          width: this.width,
+          height: this.height,
+          text: this.text,
+          color: this.color,
+          value: this.value
+        });
+      }
+
+    });
+
+  </script>
+
+</polymer-element>
+
+<!--
+Element wrapper for the `reD3` (http://bugzu.github.io/reD3/) bar chart.
+
+@class reD3-bar
+@blurb Element wrapper for the reD3 pie chart.
+@status alpha
+@snap snap.png
+-->
+<polymer-element name="reD3-bar" extends="reD3-base" attributes="xValue yValue yAxisText">
+
+  <script>
+
+    Polymer('reD3-bar', {
+
+      constructChart: function() {
+        this.chart = new reD3.Bar(this.$.chart, {
+          width: this.width,
+          height: this.height,
+          xValue: this.xValue,
+          yValue: this.yValue,
+          yAxisText: this.yAxisText
+        });
+      }
+
+    });
+
+  </script>
+
+</polymer-element>
+
+<!--
+Element wrapper for the `reD3` (http://bugzu.github.io/reD3/) stacked-area chart.
+
+@class reD3-bar
+@blurb Element wrapper for the reD3 stackedarea chart.
+@status alpha
+@snap snap.png
+-->
+<polymer-element name="reD3-stackedarea" extends="reD3-base" attributes="interpolation">
+
+  <script>
+
+    Polymer('reD3-stackedarea', {
+
+      constructChart: function() {
+        this.chart = new reD3.StackedArea(this.$.chart, {
+          width: this.width,
+          height: this.height,
+          interpolation: this.interpolation
+        });
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

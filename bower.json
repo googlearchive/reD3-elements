@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master",
-    "d3": "*",
+    "d3-elements": "PolymerLabs/d3-elements#master",
     "reD3": "bugzu/reD3"
   }
 }

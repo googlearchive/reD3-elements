@@ -9,7 +9,7 @@ Element base for the `reD3` (http://bugzu.github.io/reD3/) charts.
 @status alpha
 @snap snap.png
 -->
-<polymer-element name="reD3-base" attributes="width height data">
+<polymer-element name="reD3-base" attributes="width height data dataSourceId">
 
   <template>
 
@@ -63,13 +63,35 @@ Element base for the `reD3` (http://bugzu.github.io/reD3/) charts.
        */
       data: [],
 
+      dataSourceId: '',
+
       ready: function() {
         this.widthChanged();
         this.heightChanged();
       },
 
       domReady: function() {
-        this.constructChart();
+        this.connectOptionalDataSource();
+      },
+
+      connectOptionalDataSource: function() {
+        var dataSource = this.querySelector('d3-tsv') || this.querySelector('d3-csv');
+        if (!dataSource && this.dataSourceId) {
+          var findScope = function(node) {
+            if (!findScope(node)) {
+              return node;
+            }
+            return node.parentNode;
+          };
+          var scope = findScope(this);
+          dataSource = scope.querySelector('#' + this.dataSourceId);
+        }
+        if (dataSource) {
+          this.data = dataSource.data;
+          dataSource.addEventListener('d3-load', function() {
+            this.data = dataSource.data;
+          }.bind(this));
+        }
       },
 
       widthChanged: function() {
@@ -81,6 +103,10 @@ Element base for the `reD3` (http://bugzu.github.io/reD3/) charts.
       },
 
       dataChanged: function() {
+        if (!this.chart) {
+          this.constructChart();
+        }
+        //console.log(this.localName, 'dataChanged', this.data, this.chart);
         this.chart.render(this.data);
       }
 

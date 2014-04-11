@@ -3,18 +3,17 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master",
-    "d3": "*",
+    "d3-elements": "PolymerLabs/d3-elements#master",
     "reD3": "bugzu/reD3"
   },
   "homepage": "https://github.com/PolymerLabs/reD3-elements",
-  "_release": "0c31ec0bb0",
+  "_release": "0bd45dbe00",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "0c31ec0bb0f4966ae9363baff3d19eb1e7853c39"
+    "commit": "0bd45dbe008ed1dace3ff90f72c782fc61ea233f"
   },
   "_source": "git://github.com/PolymerLabs/reD3-elements.git",
   "_target": "master",
-  "_originalSource": "PolymerLabs/reD3-elements",
-  "_direct": true
+  "_originalSource": "PolymerLabs/reD3-elements"
 }

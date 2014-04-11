@@ -1,0 +1,18 @@
+{
+  "name": "d3-elements",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "d3": "*"
+  },
+  "homepage": "https://github.com/PolymerLabs/d3-elements",
+  "_release": "f495238b36",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f495238b360f6efb4b80bcf5435a09f170ff135e"
+  },
+  "_source": "git://github.com/PolymerLabs/d3-elements.git",
+  "_target": "master",
+  "_originalSource": "PolymerLabs/d3-elements"
+}

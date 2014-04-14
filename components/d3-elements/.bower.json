@@ -6,11 +6,11 @@
     "d3": "*"
   },
   "homepage": "https://github.com/PolymerLabs/d3-elements",
-  "_release": "f495238b36",
+  "_release": "6c30b59530",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f495238b360f6efb4b80bcf5435a09f170ff135e"
+    "commit": "6c30b595305980a99294684bdef09de2984cb82d"
   },
   "_source": "git://github.com/PolymerLabs/d3-elements.git",
   "_target": "master",

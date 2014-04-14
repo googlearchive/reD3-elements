@@ -7,11 +7,11 @@
     "reD3": "bugzu/reD3"
   },
   "homepage": "https://github.com/PolymerLabs/reD3-elements",
-  "_release": "0bd45dbe00",
+  "_release": "145d821085",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "0bd45dbe008ed1dace3ff90f72c782fc61ea233f"
+    "commit": "145d8210859954aed15f5a8c26abe587b4c4eec4"
   },
   "_source": "git://github.com/PolymerLabs/reD3-elements.git",
   "_target": "master",
